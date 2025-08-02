@@ -7,7 +7,7 @@ window.geometry("350x350")
 window.resizable(False, False)
 window.config(bg="white")
 
-frame = tk.Frame(window, bg="black", padx=20, pady=10, relief="flat", borderwidth=2)
+frame = tk.Frame(window, bg="white", padx=20, pady=10, relief="flat", borderwidth=2)
 frame.place(relx=0.5, rely=0.5, anchor="center")
 
 title_Label = tk.Label(frame, text="Login", font=("Arial", 14, "bold"), bg="white")
