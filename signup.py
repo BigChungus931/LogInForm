@@ -2,6 +2,7 @@ import tkinter as tk
 from tkinter import messagebox
 import mysql.connector
 from mysql.connector import Error
+import bcrypt
 
 window = tk.Tk()
 window.title("Sign up")
@@ -31,9 +32,47 @@ try:
             addr = address_entry.get()
             city = city_entry.get()
             age = age_entry.get()
+            salt = bcrypt.gensalt()
+            hashed_pwd = bcrypt.hashpw(pwd.encode('utf-8'), salt)
+
+            cursor.execute("SELECT COUNT(*) FROM users WHERE FirstName=%s", (fname,))
+            user_count = cursor.fetchone()[0]
+            if user_count > 0:
+                messagebox.showerror("Firstname exists", "firstname taken")
+
+            cursor.execute("SELECT COUNT(*) FROM users WHERE LastName=%s", (lname,))
+            user_count = cursor.fetchone()[0]
+            if user_count > 0:
+                messagebox.showerror("Lastname exists", "Password taken")
+
+            cursor.execute("SELECT COUNT(*) FROM users WHERE Username=%s", (uname,))
+            user_count = cursor.fetchone()[0]
+            if user_count > 0:
+                messagebox.showerror("Username exists", "Username taken")
+
+            cursor.execute("SELECT COUNT(*) FROM users WHERE Password=%s", (pwd,))
+            user_count = cursor.fetchone()[0]
+            if user_count > 0:
+                messagebox.showerror("Password exists", "Password taken")
+
+            cursor.execute("SELECT COUNT(*) FROM users WHERE Address=%s", (addr,))
+            user_count = cursor.fetchone()[0]
+            if user_count > 0:
+                messagebox.showerror("address exists", "Address taken")
+
+            cursor.execute("SELECT COUNT(*) FROM users WHERE City=%s", (city,))
+            user_count = cursor.fetchone()[0]
+            if user_count > 0:
+                messagebox.showerror("City exists", "City taken")
+
+            cursor.execute("SELECT COUNT(*) FROM users WHERE Age=%s", (age,))
+            user_count = cursor.fetchone()[0]
+            if user_count > 0:
+                messagebox.showerror("Age exists", "Age taken")
+
 
             if pwd == cpwd:
-                cursor.execute("INSERT INTO `users`( `FirstName`, `LastName`, `Username`, `Password`, `Address`, `City`, `Age`) VALUES ( %s, %s, %s, %s, %s, %s, %s )", (fname, lname, uname, pwd, addr, city, age))
+                cursor.execute("INSERT INTO `users`( `FirstName`, `LastName`, `Username`, `Password`, `Address`, `City`, `Age`) VALUES ( %s, %s, %s, %s, %s, %s, %s )", (fname, lname, uname, hashed_pwd, addr, city, age))
                 connection.commit()
 
             else:
