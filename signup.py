@@ -13,7 +13,7 @@ window.config(bg="white")
 try:
     connection = mysql.connector.connect(
         host = "localhost",
-        database = "chatdb",
+        database = "computer mind",
         user = "root",
         password = "",
         port = 3306
@@ -26,44 +26,39 @@ try:
         def add_user():
             fname = firstname_entry.get()
             lname = lastname_entry.get()
-            uname = username_entry.get()
+            email = email_entry.get()
             pwd = password_entry.get()
             cpwd = password_verify_entry.get()
-            addr = address_entry.get()
-            city = city_entry.get()
+            country = country_entry.get()
+            joined = 1
             age = age_entry.get()
             salt = bcrypt.gensalt()
             hashed_pwd = bcrypt.hashpw(pwd.encode('utf-8'), salt)
 
-            cursor.execute("SELECT COUNT(*) FROM users WHERE FirstName=%s", (fname,))
+            cursor.execute("SELECT COUNT(*) FROM users WHERE Firstname=%s", (fname,))
             user_count = cursor.fetchone()[0]
             if user_count > 0:
-                messagebox.showerror("Firstname exists", "firstname taken")
+                messagebox.showerror("Firstname exists", "Firstname taken")
 
-            cursor.execute("SELECT COUNT(*) FROM users WHERE LastName=%s", (lname,))
+            cursor.execute("SELECT COUNT(*) FROM users WHERE Lastname=%s", (lname,))
             user_count = cursor.fetchone()[0]
             if user_count > 0:
-                messagebox.showerror("Lastname exists", "Password taken")
+                messagebox.showerror("Lastname exists", "lastname taken")
 
-            cursor.execute("SELECT COUNT(*) FROM users WHERE Username=%s", (uname,))
+            cursor.execute("SELECT COUNT(*) FROM users WHERE Email=%s", (email,))
             user_count = cursor.fetchone()[0]
             if user_count > 0:
-                messagebox.showerror("Username exists", "Username taken")
+                messagebox.showerror("Email exists", "Email taken")
 
             cursor.execute("SELECT COUNT(*) FROM users WHERE Password=%s", (pwd,))
             user_count = cursor.fetchone()[0]
             if user_count > 0:
                 messagebox.showerror("Password exists", "Password taken")
 
-            cursor.execute("SELECT COUNT(*) FROM users WHERE Address=%s", (addr,))
+            cursor.execute("SELECT COUNT(*) FROM users WHERE Country=%s", (country,))
             user_count = cursor.fetchone()[0]
             if user_count > 0:
-                messagebox.showerror("address exists", "Address taken")
-
-            cursor.execute("SELECT COUNT(*) FROM users WHERE City=%s", (city,))
-            user_count = cursor.fetchone()[0]
-            if user_count > 0:
-                messagebox.showerror("City exists", "City taken")
+                messagebox.showerror("Country exists", "Country taken")
 
             cursor.execute("SELECT COUNT(*) FROM users WHERE Age=%s", (age,))
             user_count = cursor.fetchone()[0]
@@ -72,7 +67,7 @@ try:
 
 
             if pwd == cpwd:
-                cursor.execute("INSERT INTO `users`( `FirstName`, `LastName`, `Username`, `Password`, `Address`, `City`, `Age`) VALUES ( %s, %s, %s, %s, %s, %s, %s )", (fname, lname, uname, hashed_pwd, addr, city, age))
+                cursor.execute("INSERT INTO `users`( `Firstname`, `Lastname`, `Email`, `Password`, `Country`, `Age`, `Joined`) VALUES ( %s, %s, %s, %s, %s, %s, %s )", (fname, lname, email, hashed_pwd, country, age, joined))
                 connection.commit()
 
             else:
@@ -92,9 +87,9 @@ try:
         lastname_entry = tk.Entry(frame, width=30, relief="ridge")
         lastname_entry.pack(pady=5)
 
-        tk.Label(frame, text="Create username", bg="white").pack()
-        username_entry = tk.Entry(frame, width=30, relief="ridge")
-        username_entry.pack(pady=5)
+        tk.Label(frame, text="Enter email address", bg="white").pack()
+        email_entry = tk.Entry(frame, width=30, relief="ridge")
+        email_entry.pack(pady=5)
 
         tk.Label(frame, text="Create password", bg="white").pack()
         password_entry = tk.Entry(frame, width=30, show="*", relief="ridge")
@@ -104,13 +99,9 @@ try:
         password_verify_entry = tk.Entry(frame, width=30, show="*", relief="ridge")
         password_verify_entry.pack(pady=5)
 
-        tk.Label(frame, text="Add your address", bg="white").pack()
-        address_entry = tk.Entry(frame, width=30, relief="ridge")
-        address_entry.pack(pady=5)
-
-        tk.Label(frame, text="Add your city", bg="white").pack()
-        city_entry = tk.Entry(frame, width=30, relief="ridge")
-        city_entry.pack(pady=5)
+        tk.Label(frame, text="Enter your country of residence", bg="white").pack()
+        country_entry = tk.Entry(frame, width=30, relief="ridge")
+        country_entry.pack(pady=5)
 
         tk.Label(frame, text="Add your age", bg="white").pack()
         age_entry = tk.Entry(frame, width=30, relief="ridge")
