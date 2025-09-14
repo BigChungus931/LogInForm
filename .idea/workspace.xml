@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="48eb6f23-c184-4a6f-8f0a-2e4a0ce32712" name="Changes" comment="Made the signup page very frustrating when signing up">
-      <change beforePath="$PROJECT_DIR$/.idea/LogInForm.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/LogInForm.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="48eb6f23-c184-4a6f-8f0a-2e4a0ce32712" name="Changes" comment="added a different repository and changed the database to a new one">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/signup.py" beforeDir="false" afterPath="$PROJECT_DIR$/signup.py" afterDir="false" />
     </list>
@@ -34,7 +32,7 @@
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/BigChungus931/LogInForm.git&quot;,
-    &quot;accountId&quot;: &quot;11868bb0-54ca-4947-b2c9-1d655902cc20&quot;
+    &quot;accountId&quot;: &quot;a070c8a0-73e2-4801-844a-71f33443b8b3&quot;
   }
 }</component>
   <component name="ProjectColorInfo">{
@@ -48,16 +46,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.index.executor": "Run",
-    "Python.signup.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/My files/Coding/PycharmProjects/LogInForm"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.index.executor&quot;: &quot;Run&quot;,
+    &quot;Python.signup.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/My files/Coding/PycharmProjects/LogInForm&quot;
   }
-}]]></component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -146,7 +144,15 @@
       <option name="project" value="LOCAL" />
       <updated>1755445395200</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="added a different repository and changed the database to a new one">
+      <option name="closed" value="true" />
+      <created>1757264002169</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1757264002169</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -155,6 +161,7 @@
     <MESSAGE value="working on a sign up page" />
     <MESSAGE value="Connected my database chatdb to the sign up page" />
     <MESSAGE value="Made the signup page very frustrating when signing up" />
-    <option name="LAST_COMMIT_MESSAGE" value="Made the signup page very frustrating when signing up" />
+    <MESSAGE value="added a different repository and changed the database to a new one" />
+    <option name="LAST_COMMIT_MESSAGE" value="added a different repository and changed the database to a new one" />
   </component>
 </project>
