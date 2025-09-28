@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="48eb6f23-c184-4a6f-8f0a-2e4a0ce32712" name="Changes" comment="added a different repository and changed the database to a new one">
+    <list default="true" id="48eb6f23-c184-4a6f-8f0a-2e4a0ce32712" name="Changes" comment="added if statements to the age where there is a maximum and minimum age. And also changed the design of the signup page to look better">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/signup.py" beforeDir="false" afterPath="$PROJECT_DIR$/signup.py" afterDir="false" />
     </list>
@@ -152,7 +152,15 @@
       <option name="project" value="LOCAL" />
       <updated>1757264002169</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="added if statements to the age where there is a maximum and minimum age. And also changed the design of the signup page to look better">
+      <option name="closed" value="true" />
+      <created>1757869614070</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1757869614070</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -162,6 +170,7 @@
     <MESSAGE value="Connected my database chatdb to the sign up page" />
     <MESSAGE value="Made the signup page very frustrating when signing up" />
     <MESSAGE value="added a different repository and changed the database to a new one" />
-    <option name="LAST_COMMIT_MESSAGE" value="added a different repository and changed the database to a new one" />
+    <MESSAGE value="added if statements to the age where there is a maximum and minimum age. And also changed the design of the signup page to look better" />
+    <option name="LAST_COMMIT_MESSAGE" value="added if statements to the age where there is a maximum and minimum age. And also changed the design of the signup page to look better" />
   </component>
 </project>
