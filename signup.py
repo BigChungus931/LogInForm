@@ -1,5 +1,5 @@
 import tkinter as tk
-from tkinter import messagebox
+from tkinter import messagebox, ttk
 import mysql.connector
 from mysql.connector import Error
 import bcrypt
@@ -15,6 +15,44 @@ logo = Image.open("img/Computer-logo.png")
 resized_logo = logo.resize((300, 90))
 photo = ImageTk.PhotoImage(resized_logo)
 y_step = 70
+
+countries = [
+    "Select your country",
+    "Afghanistan", "Albania", "Algeria", "Andorra", "Angola", "Antigua and Barbuda",
+    "Argentina", "Armenia", "Australia", "Austria", "Azerbaijan", "Bahamas",
+    "Bahrain", "Bangladesh", "Barbados", "Belarus", "Belgium", "Belize", "Benin",
+    "Bhutan", "Bolivia", "Bosnia and Herzegovina", "Botswana", "Brazil", "Brunei",
+    "Bulgaria", "Burkina Faso", "Burundi", "Cabo Verde", "Cambodia", "Cameroon",
+    "Canada", "Central African Republic", "Chad", "Chile", "China", "Colombia",
+    "Comoros", "Congo (Congo-Brazzaville)", "Costa Rica", "Croatia", "Cuba",
+    "Cyprus", "Czechia (Czech Republic)", "Democratic Republic of the Congo",
+    "Denmark", "Djibouti", "Dominica", "Dominican Republic", "Ecuador", "Egypt",
+    "El Salvador", "Equatorial Guinea", "Eritrea", "Estonia", "Eswatini",
+    "Ethiopia", "Fiji", "Finland", "France", "Gabon", "Gambia", "Georgia",
+    "Germany", "Ghana", "Greece", "Grenada", "Guatemala", "Guinea",
+    "Guinea-Bissau", "Guyana", "Haiti", "Holy See", "Honduras", "Hungary",
+    "Iceland", "India", "Indonesia", "Iran", "Iraq", "Ireland", "Israel", "Italy",
+    "Jamaica", "Japan", "Jordan", "Kazakhstan", "Kenya", "Kiribati",
+    "Kuwait", "Kyrgyzstan", "Laos", "Latvia", "Lebanon", "Lesotho", "Liberia",
+    "Libya", "Liechtenstein", "Lithuania", "Luxembourg", "Madagascar", "Malawi",
+    "Malaysia", "Maldives", "Mali", "Malta", "Marshall Islands", "Mauritania",
+    "Mauritius", "Mexico", "Micronesia", "Moldova", "Monaco", "Mongolia",
+    "Montenegro", "Morocco", "Mozambique", "Myanmar (Burma)", "Namibia", "Nauru",
+    "Nepal", "Netherlands", "New Zealand", "Nicaragua", "Niger", "Nigeria",
+    "North Korea", "North Macedonia", "Norway", "Oman", "Pakistan", "Palau",
+    "Palestine State", "Panama", "Papua New Guinea", "Paraguay", "Peru",
+    "Philippines", "Poland", "Portugal", "Qatar", "Romania", "Russia", "Rwanda",
+    "Saint Kitts and Nevis", "Saint Lucia", "Saint Vincent and the Grenadines",
+    "Samoa", "San Marino", "Sao Tome and Principe", "Saudi Arabia", "Senegal",
+    "Serbia", "Seychelles", "Sierra Leone", "Singapore", "Slovakia", "Slovenia",
+    "Solomon Islands", "Somalia", "South Africa", "South Korea", "South Sudan",
+    "Spain", "Sri Lanka", "Sudan", "Suriname", "Sweden", "Switzerland", "Syria",
+    "Tajikistan", "Tanzania", "Thailand", "Timor-Leste", "Togo", "Tonga",
+    "Trinidad and Tobago", "Tunisia", "Turkey", "Turkmenistan", "Tuvalu",
+    "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom",
+    "United States of America", "Uruguay", "Uzbekistan", "Vanuatu",
+    "Venezuela", "Vietnam", "Yemen", "Zambia", "Zimbabwe"
+]
 
 try:
     connection = mysql.connector.connect(
@@ -35,7 +73,7 @@ try:
             email = email_entry.get()
             pwd = password_entry.get()
             cpwd = password_verify_entry.get()
-            country = country_entry.get()
+            country = country_var.get()
             joined = 1
             age = age_entry.get()
             salt = bcrypt.gensalt()
@@ -87,6 +125,10 @@ try:
                 messagebox.showerror("Too old", "Are you a mummy?")
                 error_found = True
 
+            if country == countries[0]:
+                messagebox.showinfo("Select your country", "please select your country")
+                error_found = True
+
             if pwd != cpwd:
                 messagebox.showerror("Failed", "Passwords do not match")
                 error_found = True
@@ -131,9 +173,11 @@ try:
         password_verify_entry = tk.Entry(frame, width=45, show="*", relief="ridge")
         password_verify_entry.place(x=300, y=260 + y_step)
 
-        tk.Label(frame, text="Enter your country", bg="white").place(x=225, y=310 + y_step)
-        country_entry = tk.Entry(frame, width=95, relief="ridge")
-        country_entry.place(x=0, y=340 + y_step)
+        # tk.Label(frame, text="Enter your country", bg="white").place(x=225, y=310 + y_step)
+        country_var = tk.StringVar(value=countries[0])
+        dropdown = tk.OptionMenu(frame, country_var, *countries)
+        dropdown.config(width=89, height=2, bg="white", fg="black", activebackground="#4CAF50", activeforeground="white", relief="ridge")
+        dropdown.place(x=0, y=320 + y_step)
 
 
         signin_button = tk.Button(frame, text="Signup", bg="#4CAF50", fg="white", width="25", command=add_user, relief="flat", cursor="hand2")

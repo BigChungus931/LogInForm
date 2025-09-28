@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="48eb6f23-c184-4a6f-8f0a-2e4a0ce32712" name="Changes" comment="added if statements to the age where there is a maximum and minimum age. And also changed the design of the signup page to look better">
+    <list default="true" id="48eb6f23-c184-4a6f-8f0a-2e4a0ce32712" name="Changes" comment="Continued designing the signup page and added an option where you can go to the login page">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/signup.py" beforeDir="false" afterPath="$PROJECT_DIR$/signup.py" afterDir="false" />
     </list>
@@ -160,7 +160,15 @@
       <option name="project" value="LOCAL" />
       <updated>1757869614070</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Continued designing the signup page and added an option where you can go to the login page">
+      <option name="closed" value="true" />
+      <created>1759074721052</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1759074721053</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -171,6 +179,7 @@
     <MESSAGE value="Made the signup page very frustrating when signing up" />
     <MESSAGE value="added a different repository and changed the database to a new one" />
     <MESSAGE value="added if statements to the age where there is a maximum and minimum age. And also changed the design of the signup page to look better" />
-    <option name="LAST_COMMIT_MESSAGE" value="added if statements to the age where there is a maximum and minimum age. And also changed the design of the signup page to look better" />
+    <MESSAGE value="Continued designing the signup page and added an option where you can go to the login page" />
+    <option name="LAST_COMMIT_MESSAGE" value="Continued designing the signup page and added an option where you can go to the login page" />
   </component>
 </project>
