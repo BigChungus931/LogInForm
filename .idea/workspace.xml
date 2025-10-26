@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="48eb6f23-c184-4a6f-8f0a-2e4a0ce32712" name="Changes" comment="Continued designing the signup page and added an option where you can go to the login page">
+    <list default="true" id="48eb6f23-c184-4a6f-8f0a-2e4a0ce32712" name="Changes" comment="We replaced the country label with a country list where the user can select their country.">
+      <change afterPath="$PROJECT_DIR$/signin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/signup.py" beforeDir="false" afterPath="$PROJECT_DIR$/signup.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/Computer-logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/Computer-logo.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,16 +47,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python.index.executor&quot;: &quot;Run&quot;,
-    &quot;Python.signup.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/My files/Coding/PycharmProjects/LogInForm&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.index.executor": "Run",
+    "Python.signin.executor": "Run",
+    "Python.signup.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "C:/My files/Coding/PycharmProjects/LogInForm/img"
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\My files\Coding\PycharmProjects\LogInForm\img" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -168,7 +175,15 @@
       <option name="project" value="LOCAL" />
       <updated>1759074721053</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="We replaced the country label with a country list where the user can select their country.">
+      <option name="closed" value="true" />
+      <created>1759078670434</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1759078670434</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -180,6 +195,7 @@
     <MESSAGE value="added a different repository and changed the database to a new one" />
     <MESSAGE value="added if statements to the age where there is a maximum and minimum age. And also changed the design of the signup page to look better" />
     <MESSAGE value="Continued designing the signup page and added an option where you can go to the login page" />
-    <option name="LAST_COMMIT_MESSAGE" value="Continued designing the signup page and added an option where you can go to the login page" />
+    <MESSAGE value="We replaced the country label with a country list where the user can select their country." />
+    <option name="LAST_COMMIT_MESSAGE" value="We replaced the country label with a country list where the user can select their country." />
   </component>
 </project>
