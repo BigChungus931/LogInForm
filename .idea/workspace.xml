@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="48eb6f23-c184-4a6f-8f0a-2e4a0ce32712" name="Changes" comment="We replaced the country label with a country list where the user can select their country.">
-      <change afterPath="$PROJECT_DIR$/signin.py" afterDir="false" />
+    <list default="true" id="48eb6f23-c184-4a6f-8f0a-2e4a0ce32712" name="Changes" comment="Added a login page">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Computer-logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/Computer-logo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/signin.py" beforeDir="false" afterPath="$PROJECT_DIR$/login.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,6 +49,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Python.index.executor": "Run",
+    "Python.login.executor": "Run",
     "Python.signin.executor": "Run",
     "Python.signup.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -183,7 +183,15 @@
       <option name="project" value="LOCAL" />
       <updated>1759078670434</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Added a login page">
+      <option name="closed" value="true" />
+      <created>1761497511098</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1761497511098</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -196,6 +204,7 @@
     <MESSAGE value="added if statements to the age where there is a maximum and minimum age. And also changed the design of the signup page to look better" />
     <MESSAGE value="Continued designing the signup page and added an option where you can go to the login page" />
     <MESSAGE value="We replaced the country label with a country list where the user can select their country." />
-    <option name="LAST_COMMIT_MESSAGE" value="We replaced the country label with a country list where the user can select their country." />
+    <MESSAGE value="Added a login page" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added a login page" />
   </component>
 </project>
