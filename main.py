@@ -102,7 +102,9 @@ class AstronomyApp(tk.Tk):
         self.style.configure("TopNav.TFrame", background=colors["top_nav"])
         self.style.configure("SideNav.TFrame", background=colors["side_nav"], width=220)
         self.style.configure("Nav.TButton", foreground="white", background=colors["side_nav"], padding=12, font=("Helvetica", 11, "bold"))
-        #self.style.map("Nav.TButton", background=[("active"), colors["top_nav"]])
+        self.style.map("Nav.TButton",
+                       background=[("active", "white")],
+                       foreground=[("active", "black")])
         self.style.configure("main.TFrame", background=colors["bg"])
         self.style.configure("Card.TFrame", background=colors["bg"], relief="flat")
         self.style.configure("Title.TLabel", font=("Helvetica", 20, "bold"), foreground=colors["text"])
@@ -344,6 +346,11 @@ class AstronomyApp(tk.Tk):
         total_rows = (len(image_list) + cols - 1) // cols
         canvas.configure(scrollregion=(0, 0, cols * col_width, total_rows * row_height))
 
+        def on_wheel(event):
+            canvas.yview_scroll(int(-1*(event.delta/120)), "units")
+        canvas_frame.bind("<Enter>", lambda e: canvas_frame.bind_all("<MouseWheel>", on_wheel))
+        canvas_frame.bind("<Leave>", lambda e: canvas_frame.unbind_all("<MouseWheel>"))
+
     def show_quiz(self):
         self.clear_main_content()
         colors = self.colors[self.current_theme]
@@ -475,6 +482,11 @@ class AstronomyApp(tk.Tk):
 
         total_rows = (len(image_list) + cols - 1)//cols
         canvas.configure(scrollregion=(0, 0, cols * col_width, total_rows * row_height))
+
+        def on_wheel2(event):
+            canvas.yview_scroll(int(-1*(event.delta/120)), "units")
+        canvas_frame.bind("<Enter>", lambda e: canvas_frame.bind_all("<MouseWheel>", on_wheel2))
+        canvas_frame.bind("<Leave>", lambda e: canvas_frame.unbind_all("<MouseWheel>"))
 
     def show_tou(self):
         self.clear_main_content()
