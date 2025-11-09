@@ -59,9 +59,8 @@ def handle_login():
         return
 
     if verify_login(email, password):
-        messagebox.showinfo("Success", "Login successful")
+        subprocess.Popen([sys.executable, "main.py", email])
         window.destroy()
-        subprocess.Popen([sys.executable, "signup.py", email])
     else:
         messagebox.showerror("Login failed", "Email or password was incorrect")
 

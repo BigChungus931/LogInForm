@@ -4,9 +4,71 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="48eb6f23-c184-4a6f-8f0a-2e4a0ce32712" name="Changes" comment="Added a login page">
+    <list default="true" id="48eb6f23-c184-4a6f-8f0a-2e4a0ce32712" name="Changes" comment="Connected the login page to the database">
+      <change afterPath="$PROJECT_DIR$/Space images/Alcyoneus.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Space images/Alcyoneus2.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Space images/AlphaCentauri.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Space images/Crab.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Space images/Daniel's logo.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Space images/Helix.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Space images/Hoag.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Space images/Horsehead.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Space images/Ic1101.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Space images/Kepler-425b.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Space images/Laniakea.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Space images/Needle.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Space images/Orion.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Space images/PhoenixA.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Space images/PhoenixCluster.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Space images/Sirius_A&amp;B.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Space images/SolarSystem.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Space images/Sombrero.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Space images/Sombrero2.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Space images/Stephenson.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Space images/Stephenson_2-18.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Space images/Ton618.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Space images/Ton618New.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Space images/Ton618Newer.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Space images/Vela_pulsar.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Space images/carina.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Space images/deepfield.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Space images/exoplanetsystem.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Space images/horse.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Space images/orion_infrared.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Space images/probes/Chandra.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Space images/probes/Fermi.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Space images/probes/FermiCaptureQuiz.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Space images/probes/Hubble-JWST.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Space images/probes/JWST.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Space images/probes/Juno.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Space images/probes/JunoQuiz.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Space images/probes/Parker.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Space images/probes/ParkerQuiz.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Space images/probes/Pioneer5.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Space images/probes/Rosetta.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Space images/probes/RosettaQuiz.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Space images/probes/Stars.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Space images/probes/Venera16.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Space images/probes/Venera4.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Space images/probes/Viking1.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Space images/probes/Voyager1.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Space images/probes/blackholeQuiz.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Space images/probes/hubble.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Space images/wasp7b.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Space images/wizard.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/eye.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fonts.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gallery.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hide.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/history.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/probes_quiz.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sign_in.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/space_images_quiz.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stars_quiz.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/signin.py" beforeDir="false" afterPath="$PROJECT_DIR$/login.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/login.py" beforeDir="false" afterPath="$PROJECT_DIR$/login.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,16 +112,18 @@
   "keyToString": {
     "Python.index.executor": "Run",
     "Python.login.executor": "Run",
+    "Python.main.executor": "Run",
     "Python.signin.executor": "Run",
     "Python.signup.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/My files/Coding/PycharmProjects/LogInForm/img"
+    "last_opened_file_path": "C:/My files/Coding/PycharmProjects/LogInForm"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\My files\Coding\PycharmProjects\LogInForm" />
       <recent name="C:\My files\Coding\PycharmProjects\LogInForm\img" />
     </key>
   </component>
@@ -191,7 +255,15 @@
       <option name="project" value="LOCAL" />
       <updated>1761497511098</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Connected the login page to the database">
+      <option name="closed" value="true" />
+      <created>1762106306976</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1762106306976</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -205,6 +277,7 @@
     <MESSAGE value="Continued designing the signup page and added an option where you can go to the login page" />
     <MESSAGE value="We replaced the country label with a country list where the user can select their country." />
     <MESSAGE value="Added a login page" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added a login page" />
+    <MESSAGE value="Connected the login page to the database" />
+    <option name="LAST_COMMIT_MESSAGE" value="Connected the login page to the database" />
   </component>
 </project>
