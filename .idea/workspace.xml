@@ -4,72 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="48eb6f23-c184-4a6f-8f0a-2e4a0ce32712" name="Changes" comment="Connected the login page to the database">
-      <change afterPath="$PROJECT_DIR$/Space images/Alcyoneus.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Space images/Alcyoneus2.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Space images/AlphaCentauri.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Space images/Crab.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Space images/Daniel's logo.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Space images/Helix.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Space images/Hoag.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Space images/Horsehead.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Space images/Ic1101.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Space images/Kepler-425b.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Space images/Laniakea.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Space images/Needle.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Space images/Orion.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Space images/PhoenixA.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Space images/PhoenixCluster.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Space images/Sirius_A&amp;B.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Space images/SolarSystem.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Space images/Sombrero.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Space images/Sombrero2.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Space images/Stephenson.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Space images/Stephenson_2-18.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Space images/Ton618.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Space images/Ton618New.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Space images/Ton618Newer.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Space images/Vela_pulsar.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Space images/carina.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Space images/deepfield.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Space images/exoplanetsystem.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Space images/horse.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Space images/orion_infrared.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Space images/probes/Chandra.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Space images/probes/Fermi.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Space images/probes/FermiCaptureQuiz.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Space images/probes/Hubble-JWST.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Space images/probes/JWST.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Space images/probes/Juno.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Space images/probes/JunoQuiz.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Space images/probes/Parker.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Space images/probes/ParkerQuiz.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Space images/probes/Pioneer5.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Space images/probes/Rosetta.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Space images/probes/RosettaQuiz.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Space images/probes/Stars.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Space images/probes/Venera16.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Space images/probes/Venera4.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Space images/probes/Viking1.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Space images/probes/Voyager1.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Space images/probes/blackholeQuiz.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Space images/probes/hubble.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Space images/wasp7b.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Space images/wizard.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/eye.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fonts.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gallery.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hide.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/history.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/probes_quiz.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sign_in.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/space_images_quiz.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stars_quiz.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/login.py" beforeDir="false" afterPath="$PROJECT_DIR$/login.py" afterDir="false" />
-    </list>
+    <list default="true" id="48eb6f23-c184-4a6f-8f0a-2e4a0ce32712" name="Changes" comment="Connected the login page to the database" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -108,19 +43,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.index.executor": "Run",
-    "Python.login.executor": "Run",
-    "Python.main.executor": "Run",
-    "Python.signin.executor": "Run",
-    "Python.signup.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/My files/Coding/PycharmProjects/LogInForm"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.index.executor&quot;: &quot;Run&quot;,
+    &quot;Python.login.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;Python.signin.executor&quot;: &quot;Run&quot;,
+    &quot;Python.signup.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/My files/Coding/PycharmProjects/LogInForm&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\My files\Coding\PycharmProjects\LogInForm" />
