@@ -5,7 +5,7 @@ import random
 import os
 
 
-def space_images_quiz(clear_main_content, create_card2, main_window):
+def space_images_quiz(clear_main_content, create_card2, main_window, colors):
     font_family = "Bahnschrift"
 
     clear_main_content()
@@ -79,13 +79,13 @@ def space_images_quiz(clear_main_content, create_card2, main_window):
     selected_answer = tk.IntVar()
 
     quiz_frame = tk.Frame(main_window.main_content)
-    quiz_frame.config(bg="black")
+    quiz_frame.config(bg=colors["bg"])
     quiz_frame.pack(fill="both", expand=True, padx=20, pady=10)
 
-    counter_label = tk.Label(quiz_frame, text="Question 1 of 8", font=(font_family, 18), bg="black", fg="lightblue")
+    counter_label = tk.Label(quiz_frame, text="Question 1 of 8", font=(font_family, 18), bg=colors["bg"], fg="lightblue")
     counter_label.pack(pady=5)
 
-    question_label = tk.Label(quiz_frame, text="", font=(font_family, 14, "bold"), bg="black", fg="white",
+    question_label = tk.Label(quiz_frame, text="", font=(font_family, 14, "bold"), bg=colors["bg"], fg=colors["text"],
                               wraplength=550, justify="center")
     question_label.pack(pady=20)
 
@@ -93,17 +93,17 @@ def space_images_quiz(clear_main_content, create_card2, main_window):
     img_label = tk.Label(quiz_frame, bg="black")
     img_label.pack(pady=10)
 
-    option_frame = tk.Frame(quiz_frame, bg="black")
+    option_frame = tk.Frame(quiz_frame, bg=colors["bg"])
     option_frame.pack(pady=10, fill="both", expand=True, padx=20)
     option_buttons = []
     for i in range(4):
         btn = tk.Radiobutton(option_frame, text="", variable=selected_answer, value=i, font=(font_family, 16),
-                             bg="black", fg="white", selectcolor="blue", wraplength=800, justify="left")
+                             bg=colors["bg"], fg=colors["text"], selectcolor="blue", wraplength=800, justify="left")
         btn.pack(anchor="w", pady=4, padx=20)
         option_buttons.append(btn)
 
-    score_label = tk.Label(quiz_frame, text=f"Score: 0/{len(questions)}", font=(font_family, 20, "bold"), bg="black",
-                           fg="yellow")
+    score_label = tk.Label(quiz_frame, text=f"Score: 0/{len(questions)}", font=(font_family, 20, "bold"), bg=colors["bg"],
+                           fg=colors["score"])
     score_label.place(x=10, y=10)
 
     def load_img(image_path, max_width=300, max_height=200):

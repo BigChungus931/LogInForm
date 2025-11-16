@@ -11,7 +11,7 @@ class AstronomyApp(tk.Tk):
         self.title("Astronomy Hub")
         self.geometry("1400x800")
         self.configure(bg="white")
-        self.current_theme="dark"
+        self.current_theme="light"
         self.resizable(False, False)
 
         #Castom Styling
@@ -60,18 +60,22 @@ class AstronomyApp(tk.Tk):
         #Color Schemes
         self.colors = {
             "light":{
-                "top_nav":"white",
-                "side_nav":"white",
+                "top_nav":"black",
+                "side_nav":"black",
                 "bg":"#EBEFFB",
                 "card":"#5855F5",
-                "text":"black"
+                "text":"black",
+                "nav_text":"white",
+                "score":"#D7DC03"
             },
             "dark":{
                 "top_nav":"#161616",
                 "side_nav":"#161616",
                 "bg":"#252525",
                 "card":"#5855F5",
-                "text":"white"
+                "text":"white",
+                "nav_text":"white",
+                "score": "yellow"
             }
         }
 
@@ -112,18 +116,21 @@ class AstronomyApp(tk.Tk):
         self.style.configure("Text.TLabel", font=("Helvetica", 15), foreground=colors["text"], background=colors["bg"])
         self.style.configure("Textx.TLabel", font=("Bahnschrift", 20), foreground=colors["text"], background=colors["bg"])
         self.style.configure("Theme.TButton", font=("Helvetica", 12, "bold"), padding=10, background=colors["bg"], foreground=colors["text"])
+        self.style.map("Theme.TButton",
+                       background=[("active", "white")],
+                       foreground=[("active", "black")])
 
     def create_top_nav(self):
         colors = self.colors[self.current_theme]
         top_left_frame = ttk.Frame(self.top_nav)
         top_left_frame.pack(side="left", padx=20, pady=25)
 
-        title = ttk.Label(top_left_frame, text="Astronomy", style="Title.TLabel", foreground=colors["text"], background=colors["top_nav"])
+        title = ttk.Label(top_left_frame, text="Astronomy", style="Title.TLabel", foreground=colors["nav_text"], background=colors["top_nav"])
         title.pack(side="left")
 
         top_right_frame = ttk.Frame(self.top_nav, style="TopNav.TFrame")
         top_right_frame.pack(side="right", padx=20)
-        theme_btn = ttk.Button(top_right_frame, text="Change theme", style="Theme.TButton")
+        theme_btn = ttk.Button(top_right_frame, text="Change Theme", style="Theme.TButton")
         theme_btn.pack(side="right", padx=10)
     def create_side_nav(self):
         nav_buttons = [
@@ -260,14 +267,15 @@ class AstronomyApp(tk.Tk):
             Chandra(self.clear_main_content, self.create_card)
 
     def quiz(self, i):
+        colors = self.colors[self.current_theme]
         if i == 0:
-            probes_quiz(self.clear_main_content, self.create_card2, self)
+            probes_quiz(self.clear_main_content, self.create_card2, self, colors)
 
         elif i == 1:
-            stars_quiz(self.clear_main_content, self.create_card2, self)
+            stars_quiz(self.clear_main_content, self.create_card2, self, colors)
 
         elif i == 2:
-            space_images_quiz(self.clear_main_content, self.create_card2, self)
+            space_images_quiz(self.clear_main_content, self.create_card2, self, colors)
 
     def show_home(self):
         self.clear_main_content()
