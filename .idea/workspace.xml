@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="48eb6f23-c184-4a6f-8f0a-2e4a0ce32712" name="Changes" comment="Improved the light theme version of the Astronomy app">
+    <list default="true" id="48eb6f23-c184-4a6f-8f0a-2e4a0ce32712" name="Changes" comment="fixed scroll errors">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/probes_quiz.py" beforeDir="false" afterPath="$PROJECT_DIR$/probes_quiz.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -235,7 +235,15 @@
       <option name="project" value="LOCAL" />
       <updated>1763315925962</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="fixed scroll errors">
+      <option name="closed" value="true" />
+      <created>1763916388170</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1763916388170</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -251,6 +259,7 @@
     <MESSAGE value="Added a login page" />
     <MESSAGE value="Connected the login page to the database" />
     <MESSAGE value="Improved the light theme version of the Astronomy app" />
-    <option name="LAST_COMMIT_MESSAGE" value="Improved the light theme version of the Astronomy app" />
+    <MESSAGE value="fixed scroll errors" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed scroll errors" />
   </component>
 </project>

@@ -134,26 +134,26 @@ def probes_quiz(clear_main_content, create_card2, main_window, colors):
             grade = "Why didn't you pass the test? Did you pay attention in school?"
             color = "#f44336"
 
-        result_label = tk.Label(quiz_frame, text="Quiz complete", font=(font_family, 32), fg="white", bg="black")
+        result_label = tk.Label(quiz_frame, text="Quiz complete", font=(font_family, 32), fg=colors["text"], bg=colors["bg"])
         result_label.pack(pady=30)
 
         score_results = tk.Label(quiz_frame, text=f"Your score: {score}/{len(questions)} ({percentage:.1f}%)",
-                                 font=(font_family, 24), fg="yellow", bg="black")
+                                 font=(font_family, 24), fg=colors["score"], bg=colors["bg"])
         score_results.pack(pady=20)
 
-        grade_label = tk.Label(quiz_frame, text=grade, font=(font_family, 20, "bold"), fg=color, bg="black")
+        grade_label = tk.Label(quiz_frame, text=grade, font=(font_family, 20, "bold"), fg=color, bg=colors["bg"])
         grade_label.pack(pady=20)
 
         # Result buttons
-        result_buttons_frame = tk.Frame(quiz_frame, bg="black")
+        result_buttons_frame = tk.Frame(quiz_frame, bg=colors["bg"])
         result_buttons_frame.pack(pady=30)
 
         restart_btn = tk.Button(result_buttons_frame, text="Restart quiz", command=restart_quiz,
-                                font=(font_family, 12, "bold"), bg="#4CAF50", fg="white", padx=20)
+                                font=(font_family, 12, "bold"), bg="#4CAF50", fg=colors["text"], padx=20)
         restart_btn.pack(side="left", padx=10)
 
         quit_btn = tk.Button(result_buttons_frame, text="Quit", command=quit_quiz, font=(font_family, 12, "bold"),
-                             bg="#F44336", fg="white", padx=20)
+                             bg="#F44336", fg=colors["text"], padx=20)
         quit_btn.pack(side="left", padx=10)
 
     def restart_quiz():
@@ -170,36 +170,36 @@ def probes_quiz(clear_main_content, create_card2, main_window, colors):
         nonlocal title_label, counter_label, question_label, option_frame
         nonlocal option_buttons, score_label, next_btn, quit_btn
 
-        title_label = tk.Label(quiz_frame, text="Multiple choice questions", font=(font_family, 32), fg="white",
-                               bg="black")
+        title_label = tk.Label(quiz_frame, text="Multiple choice questions", font=(font_family, 32), fg=colors["text"],
+                               bg=colors["bg"])
         title_label.pack(pady=20)
 
-        counter_label = tk.Label(quiz_frame, text="Question 1 of 8", font=(font_family, 23), bg="black", fg="lightblue")
+        counter_label = tk.Label(quiz_frame, text="Question 1 of 8", font=(font_family, 23), bg=colors["bg"], fg="lightblue")
         counter_label.pack(pady=5)
 
-        question_label = tk.Label(quiz_frame, text="", font=(font_family, 25, "bold"), bg="black", fg="white",
+        question_label = tk.Label(quiz_frame, text="", font=(font_family, 25, "bold"), bg=colors["bg"], fg=colors["text"],
                                   wraplength=550, justify="center")
         question_label.pack(pady=20)
 
-        option_frame = tk.Frame(quiz_frame, bg="black")
+        option_frame = tk.Frame(quiz_frame, bg=colors["bg"])
         option_frame.pack(pady=20, fill="both", expand=True, padx=20)
         option_buttons = []
         for i in range(4):
             btn = tk.Radiobutton(option_frame, text="", variable=selected_answer, value=i, font=(font_family, 23),
-                                 bg="black", fg="white", selectcolor="blue", wraplength=800, justify="left")
+                                 bg=colors["bg"], fg=colors["text"], selectcolor="blue", wraplength=800, justify="left")
             btn.pack(anchor="w", pady=8, padx=20)
             option_buttons.append(btn)
 
         score_label = tk.Label(quiz_frame, text=f"Score: 0/{len(questions)}", font=(font_family, 20, "bold"),
-                               bg="black", fg="yellow")
+                            bg=colors["bg"], fg=colors["score"])
         score_label.place(x=10, y=10)
 
         next_btn = tk.Button(quiz_frame, text="Next question", command=next_question, font=("Arial", 12, "bold"),
-                             background="#4CAF50", fg="white", relief="flat")
+                             background="#4CAF50", fg=colors["text"], relief="flat")
         next_btn.place(x=840, y=10)
 
         quit_btn = tk.Button(quiz_frame, text="Quit", command=quit_quiz, font=("Arial", 12, "bold"), background="red",
-                             fg="white", relief="flat")
+                             fg=colors["text"], relief="flat")
         quit_btn.place(x=970, y=10)
 
         load_question()
@@ -210,11 +210,11 @@ def probes_quiz(clear_main_content, create_card2, main_window, colors):
 
     # Create the navigation buttons
     next_btn = tk.Button(quiz_frame, text="Next question", command=next_question, font=("Arial", 12, "bold"),
-                         background="#4CAF50", fg="white", relief="flat")
+                         background="#4CAF50", fg=colors["text"], relief="flat")
     next_btn.place(x=840, y=10)
 
     quit_btn = tk.Button(quiz_frame, text="Quit", command=quit_quiz, font=("Arial", 12, "bold"), background="red",
-                         fg="white", relief="flat")
+                         fg=colors["text"], relief="flat")
     quit_btn.place(x=970, y=10)
 
     # Load the first question
