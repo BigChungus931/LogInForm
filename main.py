@@ -13,6 +13,7 @@ class AstronomyApp(tk.Tk):
         self.configure(bg="white")
         self.current_theme="light"
         self.resizable(False, False)
+        self.current_canvas_frame = None
 
         #Castom Styling
         self.style=ttk.Style(self)
@@ -146,6 +147,10 @@ class AstronomyApp(tk.Tk):
             btn = ttk.Button(self.side_nav, text=text, style="Nav.TButton", command=command)
             btn.pack(fill="x", ipady=12, pady=15, ipadx=50, padx=50)
     def clear_main_content(self):
+        try:
+            self.unbind_all("<Mousewheel>")
+        except:
+            pass
         for widget in self.main_content.winfo_children():
             widget.destroy()
 
@@ -282,8 +287,25 @@ class AstronomyApp(tk.Tk):
         self.create_card(" Welcome to Astronomy Hub", "Explore various mystery objects from space that we discovered.", "🔍")
 
     def show_about(self):
+        colors = self.colors[self.current_theme]
         self.clear_main_content()
         self.create_card(" About","Here we explore space and its big role in role in the Universe, from our planet Earth to the largest stars, galaxies, and blackholes.", "🌟")
+        canvas_frame = ttk.Frame(self.main_content)
+        canvas_frame.pack(fill="both", expand=True, padx=20, pady=10)
+
+        canvas = tk.Canvas(canvas_frame, background=colors["bg"], highlightbackground=colors["bg"],
+                           highlightcolor=colors["bg"], highlightthickness=1)
+
+        canvas.pack(side="left", fill="both", expand=True)
+
+        canvas.configure(scrollregion=(0, 0, 500, 500))
+
+        def on_wheel4(event):
+            canvas.yview_scroll(int(-1 * (event.delta / 120)), "units")
+
+        self.current_canvas_frame = canvas_frame
+        canvas_frame.bind("<Enter>", lambda e: canvas_frame.bind_all("<MouseWheel>", on_wheel4))
+        canvas_frame.bind("<Leave>", lambda e: canvas_frame.unbind_all("<MouseWheel>"))
 
     def show_history(self):
         colors = self.colors[self.current_theme]
@@ -349,13 +371,17 @@ class AstronomyApp(tk.Tk):
             )
 
             image_id = canvas.create_image(x, y, image=img, anchor="nw")
-            canvas.tag_bind(image_id, "<Button-1>", lambda event, i=index: self.history(i))
+            def on_image_click(event, idx=index):
+                self.unbind_all("<MouseWheel>")
+                self.history(idx)
+            canvas.tag_bind(image_id, "<Button-1>", on_image_click)
 
         total_rows = (len(image_list) + cols - 1) // cols
         canvas.configure(scrollregion=(0, 0, cols * col_width, total_rows * row_height))
 
         def on_wheel(event):
             canvas.yview_scroll(int(-1*(event.delta/120)), "units")
+        self.current_canvas_frame = canvas_frame
         canvas_frame.bind("<Enter>", lambda e: canvas_frame.bind_all("<MouseWheel>", on_wheel))
         canvas_frame.bind("<Leave>", lambda e: canvas_frame.unbind_all("<MouseWheel>"))
 
@@ -406,10 +432,19 @@ class AstronomyApp(tk.Tk):
             )
 
             image_id = canvas.create_image(x, y, image=img, anchor="nw")
-            canvas.tag_bind(image_id, "<Button-1>", lambda event, i=index: self.quiz(i))
+            def on_image_click(event, idx=index):
+                self.unbind_all("<MouseWheel>")
+                self.quiz(idx)
+            canvas.tag_bind(image_id, "<Button-1>", on_image_click)
 
         total_rows = (len(image_list) + cols - 1) // cols
         canvas.configure(scrollregion=(0, 0, cols * col_width, total_rows * row_height))
+
+        def on_wheel3(event):
+            canvas.yview_scroll(int(-1*(event.delta/120)), "units")
+        self.current_canvas_frame = canvas_frame
+        canvas_frame.bind("<Enter>", lambda e: canvas_frame.bind_all("<MouseWheel>", on_wheel3))
+        canvas_frame.bind("<Leave>", lambda e: canvas_frame.unbind_all("<MouseWheel>"))
 
     def show_gallery(self):
         colors = self.colors[self.current_theme]
@@ -486,13 +521,17 @@ class AstronomyApp(tk.Tk):
             )
 
             image_id = canvas.create_image(x, y, image = img, anchor="nw")
-            canvas.tag_bind(image_id, "<Button-1>", lambda event, i = index: self.gallery(i))
+            def on_image_click(event, idx=index):
+                self.unbind_all("<MouseWheel>")
+                self.gallery(idx)
+            canvas.tag_bind(image_id, "<Button-1>", on_image_click)
 
         total_rows = (len(image_list) + cols - 1)//cols
         canvas.configure(scrollregion=(0, 0, cols * col_width, total_rows * row_height))
 
         def on_wheel2(event):
             canvas.yview_scroll(int(-1*(event.delta/120)), "units")
+        self.current_canvas_frame = canvas_frame
         canvas_frame.bind("<Enter>", lambda e: canvas_frame.bind_all("<MouseWheel>", on_wheel2))
         canvas_frame.bind("<Leave>", lambda e: canvas_frame.unbind_all("<MouseWheel>"))
 
