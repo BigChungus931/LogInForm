@@ -1,13 +1,44 @@
 import tkinter as tk
 from tkinter import messagebox
 import random
-
+import mysql.connector
+from mysql.connector import Error
 
 def probes_quiz(clear_main_content, create_card2, main_window, colors):
     font_family = "Bahnschrift"
 
+    try:
+        connection = mysql.connector.connect(
+            host="localhost",
+            user="root",
+            password="",
+            database="computer mind"
+        )
+
+    except Error as e:
+        messagebox.showerror("Database error", "Failed to connect to phpMyAdmin")
+        return
+
+    try:
+        cursor = connection.cursor(dictionary = True)
+        cursor.execute("SELECT * FROM quiz_categories WHERE id = %s", (1,))
+        category_info = cursor.fetchone()
+        cursor.close()
+    except Error as e:
+        messagebox.showerror("Database error", "Error fetching category")
+        connection.close()
+        return
+
     clear_main_content()
-    create_card2("Probes", "This quiz is about probes", "🚀 ")
+
+    if category_info:
+        create_card2(
+            category_info["category_name"],
+            category_info["description"],
+            category_info["icon"]
+        )
+    else:
+        create_card2("Probes", "This quiz is about probes", "🚀 ")
 
     # Quiz data
     questions = [
