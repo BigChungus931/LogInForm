@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="48eb6f23-c184-4a6f-8f0a-2e4a0ce32712" name="Changes" comment="Added the colors to the rest of the quiz pages">
+    <list default="true" id="48eb6f23-c184-4a6f-8f0a-2e4a0ce32712" name="Changes" comment="Connected Astronomy app to the database">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/probes_quiz.py" beforeDir="false" afterPath="$PROJECT_DIR$/probes_quiz.py" afterDir="false" />
     </list>
@@ -259,7 +259,15 @@
       <option name="project" value="LOCAL" />
       <updated>1764444049776</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Connected Astronomy app to the database">
+      <option name="closed" value="true" />
+      <created>1765127611331</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1765127611331</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -278,6 +286,7 @@
     <MESSAGE value="fixed scroll errors" />
     <MESSAGE value="Added the colors to the probes_quiz.py" />
     <MESSAGE value="Added the colors to the rest of the quiz pages" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added the colors to the rest of the quiz pages" />
+    <MESSAGE value="Connected Astronomy app to the database" />
+    <option name="LAST_COMMIT_MESSAGE" value="Connected Astronomy app to the database" />
   </component>
 </project>

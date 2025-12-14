@@ -40,49 +40,52 @@ def probes_quiz(clear_main_content, create_card2, main_window, colors):
     else:
         create_card2("Probes", "This quiz is about probes", "🚀 ")
 
-    # Quiz data
-    questions = [
-        {
-            "question": "which space probe orbited Jupiter starting in 2016?",
-            "options": ["Voyager 2", "Galileo", "Cassini", "Juno"],
-            "correct": 3
-        },
-        {
-            "question": "which space probe landed on a comet in 2014?",
-            "options": ["Pioneer", "Rosetta", "Juno", "New Horizons"],
-            "correct": 1
-        },
-        {
-            "question": "which space probe was the first to land on Mars successfully?",
-            "options": ["Viking 1", "Sojourner", "Spirit", "Curiosity"],
-            "correct": 0
-        },
-        {
-            "question": "which Soviet probe was the first to reach Venus?",
-            "options": ["Luna 2", "Venera 16", "Venera 7", "Mars 3"],
-            "correct": 2
-        },
-        {
-            "question": "which spacecraft took the famous 'Pale Blue Dot' photo?",
-            "options": ["Voyager 2", "Voyager 1", "New Horizons", "Hubble"],
-            "correct": 1
-        },
-        {
-            "question": "which probe studied the asteroid Vesta and dwarf planet Ceres?",
-            "options": ["Juno", "Rosetta", "Dawn", "Voyager 2"],
-            "correct": 2
-        },
-        {
-            "question": "which Japanese probe collected samples from asteroid Ryugu?",
-            "options": ["Hayabusa2", "OSIRIS-REx", "Pioneer", "Luna 3"],
-            "correct": 0
-        },
-        {
-            "question": "which space probe studied Jupiter before Juno?",
-            "options": ["New Horizons", "Cassini", "Mariner 10", "Galileo"],
-            "correct": 3
-        }
-    ]
+    #Load question
+    try:
+        cursor = connection.cursor(dictionary = True)
+        cursor.execute("SELECT id FROM quiz_categories WHERE category_name=%s", ("Probes",))
+        category = cursor.fetchone()
+        if not category:
+            messagebox.showerror("Error", "Category probes not found")
+            connection.close()
+            return
+        category_id = category["id"]
+
+        #Get all questions
+        cursor.execute("""
+        SELECT id, question_text, correct_answer
+        FROM questions
+        WHERE category_id=%s
+        """,(category_id,))
+
+        db_questions = cursor.fetchall()
+        questions = []
+        for question in db_questions:
+            cursor.execute("""
+            SELECT option_text
+            FROM question_options
+            WHERE question_id=%s
+            ORDER BY option_index
+            """, (question["id"],))
+
+            options = cursor.fetchall()
+            questions.append({
+                "question":question["question_text"],
+                "options":[opt["option_text"] for opt in options],
+                "correct":question["correct_answer"]
+            })
+        cursor.close()
+
+    except Error as e:
+        messagebox.showerror("Database error", f"Error fetching questions{e}")
+        connection.close()
+        return
+
+    if not questions:
+        messagebox.showerror("Error", "No questions found in this database")
+        connection.close()
+        return
+
     random.shuffle(questions)
 
     # Quiz variables
