@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="48eb6f23-c184-4a6f-8f0a-2e4a0ce32712" name="Changes" comment="Connected Astronomy app to the database">
+    <list default="true" id="48eb6f23-c184-4a6f-8f0a-2e4a0ce32712" name="Changes" comment="Finished working on connecting the questions from probes quiz to the database + also added question about math.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/probes_quiz.py" beforeDir="false" afterPath="$PROJECT_DIR$/probes_quiz.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stars_quiz.py" beforeDir="false" afterPath="$PROJECT_DIR$/stars_quiz.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -267,7 +267,15 @@
       <option name="project" value="LOCAL" />
       <updated>1765127611331</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Finished working on connecting the questions from probes quiz to the database + also added question about math.">
+      <option name="closed" value="true" />
+      <created>1765731744643</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1765731744643</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -287,6 +295,7 @@
     <MESSAGE value="Added the colors to the probes_quiz.py" />
     <MESSAGE value="Added the colors to the rest of the quiz pages" />
     <MESSAGE value="Connected Astronomy app to the database" />
-    <option name="LAST_COMMIT_MESSAGE" value="Connected Astronomy app to the database" />
+    <MESSAGE value="Finished working on connecting the questions from probes quiz to the database + also added question about math." />
+    <option name="LAST_COMMIT_MESSAGE" value="Finished working on connecting the questions from probes quiz to the database + also added question about math." />
   </component>
 </project>

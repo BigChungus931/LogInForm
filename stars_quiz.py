@@ -1,64 +1,92 @@
 import tkinter as tk
 from tkinter import messagebox
 import random
+import mysql.connector
+from mysql.connector import Error
 
 
 def stars_quiz(clear_main_content, create_card2, main_window, colors):
     font_family = "Bahnschrift"
 
+    try:
+        connection = mysql.connector.connect(
+            host="localhost",
+            user="root",
+            password="",
+            database="computer mind"
+        )
+
+    except Error as e:
+        messagebox.showerror("Database error", "Failed to connect to phpMyAdmin")
+        return
+
+    try:
+        cursor = connection.cursor(dictionary=True)
+        cursor.execute("SELECT * FROM quiz_categories WHERE id = %s", (2,))
+        category_info = cursor.fetchone()
+        cursor.close()
+    except Error as e:
+        messagebox.showerror("Database error", "Error fetching category")
+        connection.close()
+        return
+
     clear_main_content()
-    create_card2("Stars", "This quiz is about stars", "⭐ ")
 
-    # Quiz data
-    questions = [
-        {
-            "question": "which is the closest star to Earth after the Sun?",
-            "options": ["Sirius", "Alpha Centauri", "Proxima Centauri", "Vega"],
-            "correct": 2
-        },
+    if category_info:
+        create_card2(
+            category_info["category_name"],
+            category_info["description"],
+            category_info["icon"]
+        )
+    else:
+        create_card2("Stars", "This quiz is about stars", "⭐ ")
 
-        {
-            "question": "which star is known as the North Star?",
-            "options": ["Sirius", "Polaris", "Betelgeuse", "Rigel"],
-            "correct": 1
-        },
+    # Load question
+    try:
+        cursor = connection.cursor(dictionary=True)
+        cursor.execute("SELECT id FROM quiz_categories WHERE category_name=%s", ("Stars",))
+        category = cursor.fetchone()
+        if not category:
+            messagebox.showerror("Error", "Category stars not found")
+            connection.close()
+            return
+        category_id = category["id"]
 
-        {
-            "question": "which is the brightest star in the night sky?",
-            "options": ["Sirius", "Vega", "Betelgeuse", "Rigel"],
-            "correct": 0
-        },
+        # Get all questions
+        cursor.execute("""
+          SELECT id, question_text, correct_answer
+          FROM questions
+          WHERE category_id=%s
+          """, (category_id,))
 
-        {
-            "question": "what type of star is our Sun?",
-            "options": ["Red giant", "White dwarf", "Yellow dwarf", "Neutron star"],
-            "correct": 2
-        },
+        db_questions = cursor.fetchall()
+        questions = []
+        for question in db_questions:
+            cursor.execute("""
+              SELECT option_text
+              FROM question_options
+              WHERE question_id=%s
+              ORDER BY option_index
+              """, (question["id"],))
 
-        {
-            "question": "which star is a red supergiant?",
-            "options": ["Betelgeuse", "Sirius", "Vega", "Proxima Centauri"],
-            "correct": 0
-        },
+            options = cursor.fetchall()
+            questions.append({
+                "question": question["question_text"],
+                "options": [opt["option_text"] for opt in options],
+                "correct": question["correct_answer"]
+            })
+        cursor.close()
 
-        {
-            "question": "which is the most luminous known star in our galaxy?",
-            "options": ["UY Scuti", "VY Canis Majoris", "R136a1", "Betelgeuse"],
-            "correct": 2
-        },
+    except Error as e:
+        messagebox.showerror("Database error", f"Error fetching questions{e}")
+        connection.close()
+        return
 
-        {
-            "question": "which star is considered the largest in terms of radius?",
-            "options": ["UY Scuti", "R136a1", "Vega", "Antares"],
-            "correct": 0
-        },
+    if not questions:
+        messagebox.showerror("Error", "No questions found in this database")
+        connection.close()
+        return
 
-        {
-            "question": "which type of star is thought to be the remnant core of a massive supernova?",
-            "options": ["Neutron star", "Red dwarf", "Blue giant", "Yellow dwarf"],
-            "correct": 0
-        }
-    ]
     random.shuffle(questions)
 
     # Quiz variables
