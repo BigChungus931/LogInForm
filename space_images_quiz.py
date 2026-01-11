@@ -3,74 +3,93 @@ from tkinter import messagebox
 from PIL import Image, ImageTk, ImageDraw
 import random
 import os
+import mysql.connector
+from mysql.connector import Error
 
 
 def space_images_quiz(clear_main_content, create_card2, main_window, colors):
     font_family = "Bahnschrift"
 
+    try:
+        connection = mysql.connector.connect(
+            host="localhost",
+            user="root",
+            password="",
+            database="computer mind"
+        )
+
+    except Error as e:
+        messagebox.showerror("Database error", "Failed to connect to phpMyAdmin")
+        return
+
+    try:
+        cursor = connection.cursor(dictionary=True)
+        cursor.execute("SELECT * FROM quiz_categories WHERE id = %s", (3,))
+        category_info = cursor.fetchone()
+        cursor.close()
+    except Error as e:
+        messagebox.showerror("Database error", "Error fetching category")
+        connection.close()
+        return
+
     clear_main_content()
-    create_card2("Space images", "This quiz is about space images", "🔭 ")
 
-    # Quiz data
-    questions = [
+    if category_info:
+        create_card2(
+            category_info["category_name"],
+            category_info["description"],
+            category_info["icon"]
+        )
+    else:
+        create_card2("Space images", "This quiz is about space images", "🔭 ")
 
-        {
-            "question": "which space telescope captured the detailed image of the Carina Nebula?",
-            "image_path": "Space images/carina.PNG",
-            "options": ["Hubble", "James Webb", "Spitzer", "Kepler"],
-            "correct": 1
-        },
+    # Load question
+    try:
+        cursor = connection.cursor(dictionary=True)
+        cursor.execute("SELECT id FROM quiz_categories WHERE category_name=%s", ("Space",))
+        category = cursor.fetchone()
+        if not category:
+            messagebox.showerror("Error", "Category space images not found")
+            connection.close()
+            return
+        category_id = category["id"]
 
-        {
-            "question": "Which nebula is famously nicknamed the Pillars of Creation?",
-            "image_path": "Space images/pillars_of_creation.PNG",
-            "options": ["Orion Nebula", "Eagle Nebula", "Lagoon Nebula", "Trifid Nebula"],
-            "correct": 1
-        },
+        # Get all questions
+        cursor.execute("""
+              SELECT id, question_text, image_path, correct_answer
+              FROM questions
+              WHERE category_id=%s
+              """, (category_id,))
 
-        {
-            "question": "Which space telescope revealed the stunning deep field image showing thousands of distant galaxies?",
-            "image_path": "Space images/deepfield.PNG",
-            "options": ["Spitzer", "Kepler", "Hubble", "Chandra"],
-            "correct": 2
-        },
+        db_questions = cursor.fetchall()
+        questions = []
+        for question in db_questions:
+            cursor.execute("""
+                  SELECT option_text
+                  FROM question_options
+                  WHERE question_id=%s
+                  ORDER BY option_index
+                  """, (question["id"],))
 
-        {
-            "question": "The Sombrero Galaxy was captured in high detail by which telescope?",
-            "image_path": "Space images/Sombrero2.PNG",
-            "options": ["Hubble", "James Webb", "Chandra", "Spitzer"],
-            "correct": 0
-        },
+            options = cursor.fetchall()
+            questions.append({
+                "question": question["question_text"],
+                "image_path": question["image_path"],
+                "options": [opt["option_text"] for opt in options],
+                "correct": question["correct_answer"]
+            })
+        cursor.close()
 
-        {
-            "question": "Which nebula is shaped like a horse’s head and is a famous target for astrophotographers?",
-            "image_path": "Space images/Horsehead.PNG",
-            "options": ["Orion Nebula", "Horsehead Nebula", "Helix Nebula", "Ring Nebula"],
-            "correct": 1
-        },
+    except Error as e:
+        messagebox.showerror("Database error", f"Error fetching questions{e}")
+        connection.close()
+        return
 
-        {
-            "question": "Which telescope captured the first direct image of an exoplanet system?",
-            "image_path": "Space images/exoplanetsystem.PNG",
-            "options": ["Kepler", "James Webb", "Hubble", "Very Large Telescope (VLT)"],
-            "correct": 3
-        },
+    if not questions:
+        messagebox.showerror("Error", "No questions found in this database")
+        connection.close()
+        return
 
-        {
-            "question": "The Crab Nebula is the remnant of what kind of astronomical event?",
-            "image_path": "Space images/Crab.PNG",
-            "options": ["Supernova", "Black Hole Formation", "Star Formation", "Comet Collision"],
-            "correct": 0
-        },
-
-        {
-            "question": "Which telescope produced infrared images revealing hidden star-forming regions in the Orion Nebula?",
-            "image_path": "Space images/orion_infrared.PNG",
-            "options": ["Hubble", "James Webb", "Spitzer", "Chandra"],
-            "correct": 2
-        }
-
-    ]
     random.shuffle(questions)
 
     # Quiz variables
