@@ -209,10 +209,12 @@ def stars_quiz(clear_main_content, create_card2, main_window, colors):
                                bg=colors["bg"])
         title_label.pack(pady=20)
 
-        counter_label = tk.Label(quiz_frame, text="Question 1 of 8", font=(font_family, 23), bg=colors["bg"], fg="lightblue")
+        counter_label = tk.Label(quiz_frame, text="Question 1 of 8", font=(font_family, 23), bg=colors["bg"],
+                                 fg="lightblue")
         counter_label.pack(pady=5)
 
-        question_label = tk.Label(quiz_frame, text="", font=(font_family, 25, "bold"), bg=colors["bg"], fg=colors["text"],
+        question_label = tk.Label(quiz_frame, text="", font=(font_family, 25, "bold"), bg=colors["bg"],
+                                  fg=colors["text"],
                                   wraplength=550, justify="center")
         question_label.pack(pady=20)
 
@@ -220,13 +222,14 @@ def stars_quiz(clear_main_content, create_card2, main_window, colors):
         option_frame.pack(pady=20, fill="both", expand=True, padx=20)
         option_buttons = []
         for i in range(4):
-            btn = tk.Radiobutton(option_frame, text="", variable=selected_answer, value=i, font=(font_family, 23),
+            btn = tk.Radiobutton(option_frame, text="", variable=selected_answer, value=i, font=(font_family, 17),
                                  bg=colors["bg"], fg=colors["text"], selectcolor="blue", wraplength=800, justify="left")
             btn.pack(anchor="w", pady=8, padx=20)
             option_buttons.append(btn)
 
         score_label = tk.Label(quiz_frame, text=f"Score: 0/{len(questions)}", font=(font_family, 20, "bold"),
-                               bg=colors["bg"], fg=colors["score"])
+                               bg=colors["bg"],
+                               fg=colors["score"])
         score_label.place(x=10, y=10)
 
         next_btn = tk.Button(quiz_frame, text="Next question", command=next_question, font=("Arial", 12, "bold"),

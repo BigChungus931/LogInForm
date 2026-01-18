@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="48eb6f23-c184-4a6f-8f0a-2e4a0ce32712" name="Changes" comment="Connected the database and added the questions from the stars quiz">
+    <list default="true" id="48eb6f23-c184-4a6f-8f0a-2e4a0ce32712" name="Changes" comment="Added all the questions from the space images quiz to the database">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/probes_quiz.py" beforeDir="false" afterPath="$PROJECT_DIR$/probes_quiz.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/space_images_quiz.py" beforeDir="false" afterPath="$PROJECT_DIR$/space_images_quiz.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stars_quiz.py" beforeDir="false" afterPath="$PROJECT_DIR$/stars_quiz.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -283,7 +285,15 @@
       <option name="project" value="LOCAL" />
       <updated>1766335777624</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Added all the questions from the space images quiz to the database">
+      <option name="closed" value="true" />
+      <created>1768150047432</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1768150047432</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -305,6 +315,7 @@
     <MESSAGE value="Connected Astronomy app to the database" />
     <MESSAGE value="Finished working on connecting the questions from probes quiz to the database + also added question about math." />
     <MESSAGE value="Connected the database and added the questions from the stars quiz" />
-    <option name="LAST_COMMIT_MESSAGE" value="Connected the database and added the questions from the stars quiz" />
+    <MESSAGE value="Added all the questions from the space images quiz to the database" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added all the questions from the space images quiz to the database" />
   </component>
 </project>
