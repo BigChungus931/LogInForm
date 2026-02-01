@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="48eb6f23-c184-4a6f-8f0a-2e4a0ce32712" name="Changes" comment="Added all the questions from the space images quiz to the database">
+    <list default="true" id="48eb6f23-c184-4a6f-8f0a-2e4a0ce32712" name="Changes" comment="made the questions stay on the same position when restarting the quiz">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/probes_quiz.py" beforeDir="false" afterPath="$PROJECT_DIR$/probes_quiz.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/space_images_quiz.py" beforeDir="false" afterPath="$PROJECT_DIR$/space_images_quiz.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stars_quiz.py" beforeDir="false" afterPath="$PROJECT_DIR$/stars_quiz.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +57,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/My files/Coding/PycharmProjects/LogInForm/main.py&quot;
+    &quot;last_opened_file_path&quot;: &quot;C:/My files/Coding/PycharmProjects/TelegramBot&quot;
   }
 }</component>
   <component name="RecentsManager">
@@ -293,7 +291,15 @@
       <option name="project" value="LOCAL" />
       <updated>1768150047432</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="made the questions stay on the same position when restarting the quiz">
+      <option name="closed" value="true" />
+      <created>1768754975464</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1768754975464</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -316,6 +322,7 @@
     <MESSAGE value="Finished working on connecting the questions from probes quiz to the database + also added question about math." />
     <MESSAGE value="Connected the database and added the questions from the stars quiz" />
     <MESSAGE value="Added all the questions from the space images quiz to the database" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added all the questions from the space images quiz to the database" />
+    <MESSAGE value="made the questions stay on the same position when restarting the quiz" />
+    <option name="LAST_COMMIT_MESSAGE" value="made the questions stay on the same position when restarting the quiz" />
   </component>
 </project>

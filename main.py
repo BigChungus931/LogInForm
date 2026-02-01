@@ -14,6 +14,8 @@ class AstronomyApp(tk.Tk):
         self.current_theme="light"
         self.resizable(False, False)
         self.current_canvas_frame = None
+        self._current_page = None
+        self._current_page_arg = ()
 
         #Castom Styling
         self.style=ttk.Style(self)
@@ -61,12 +63,12 @@ class AstronomyApp(tk.Tk):
         #Color Schemes
         self.colors = {
             "light":{
-                "top_nav":"black",
-                "side_nav":"black",
+                "top_nav":"#BCCEDE",
+                "side_nav":"#BCCEDE",
                 "bg":"#EBEFFB",
                 "card":"#5855F5",
                 "text":"black",
-                "nav_text":"white",
+                "nav_text":"black",
                 "score":"#D7DC03"
             },
             "dark":{
@@ -102,11 +104,30 @@ class AstronomyApp(tk.Tk):
         self.create_side_nav()
         self.show_home()
 
+    def change_theme(self):
+        self.current_theme = "dark" if self.current_theme == "light" else "light"
+        self.configure_styles()
+        colors = self.colors[self.current_theme]
+        self.configure(bg=colors["top_nav"])
+
+        for widget in self.top_nav.winfo_children():
+            widget.destroy()
+
+        self.create_top_nav()
+
+        for widget in self.side_nav.winfo_children():
+            widget.destroy()
+
+        self.create_side_nav()
+
+        if self._current_page is not None:
+            self._current_page(* self._current_page_arg)
+
     def configure_styles(self):
         colors = self.colors[self.current_theme]
         self.style.configure("TopNav.TFrame", background=colors["top_nav"])
         self.style.configure("SideNav.TFrame", background=colors["side_nav"], width=220)
-        self.style.configure("Nav.TButton", foreground="white", background=colors["side_nav"], padding=12, font=("Helvetica", 11, "bold"))
+        self.style.configure("Nav.TButton", foreground=colors["nav_text"], background=colors["side_nav"], padding=12, font=("Helvetica", 11, "bold"))
         self.style.map("Nav.TButton",
                        background=[("active", "white")],
                        foreground=[("active", "black")])
@@ -131,7 +152,7 @@ class AstronomyApp(tk.Tk):
 
         top_right_frame = ttk.Frame(self.top_nav, style="TopNav.TFrame")
         top_right_frame.pack(side="right", padx=20)
-        theme_btn = ttk.Button(top_right_frame, text="Change Theme", style="Theme.TButton")
+        theme_btn = ttk.Button(top_right_frame, text="Change Theme", style="Theme.TButton", command=self.change_theme)
         theme_btn.pack(side="right", padx=10)
     def create_side_nav(self):
         nav_buttons = [
@@ -180,6 +201,8 @@ class AstronomyApp(tk.Tk):
 
 #Gallery.py content
     def gallery(self, i):
+        self._current_page = self.gallery
+        self._current_page_arg = (i, )
         if i == 0:
             Hoag(self.clear_main_content, self.create_card)
 
@@ -235,6 +258,8 @@ class AstronomyApp(tk.Tk):
             Kepler452b(self.clear_main_content, self.create_card)
 
     def history(self, i):
+        self._current_page = self.history
+        self._current_page_arg = (i,)
         if i == 0:
             Venera16(self.clear_main_content, self.create_card)
 
@@ -272,6 +297,8 @@ class AstronomyApp(tk.Tk):
             Chandra(self.clear_main_content, self.create_card)
 
     def quiz(self, i):
+        self._current_page = self.quiz
+        self._current_page_arg = (i,)
         colors = self.colors[self.current_theme]
         if i == 0:
             probes_quiz(self.clear_main_content, self.create_card2, self, colors)
@@ -283,10 +310,14 @@ class AstronomyApp(tk.Tk):
             space_images_quiz(self.clear_main_content, self.create_card2, self, colors)
 
     def show_home(self):
+        self._current_page = self.show_home
+        self._current_page_arg = ()
         self.clear_main_content()
         self.create_card(" Welcome to Astronomy Hub", "Explore various mystery objects from space that we discovered.", "🔍")
 
     def show_about(self):
+        self._current_page = self.show_about
+        self._current_page_arg = ()
         colors = self.colors[self.current_theme]
         self.clear_main_content()
         self.create_card(" About","Here we explore space and its big role in role in the Universe, from our planet Earth to the largest stars, galaxies, and blackholes.", "🌟")
@@ -308,6 +339,8 @@ class AstronomyApp(tk.Tk):
         canvas_frame.bind("<Leave>", lambda e: canvas_frame.unbind_all("<MouseWheel>"))
 
     def show_history(self):
+        self._current_page = self.show_history
+        self._current_page_arg = ()
         colors = self.colors[self.current_theme]
         self.clear_main_content()
         self.create_card(" History",
@@ -386,6 +419,8 @@ class AstronomyApp(tk.Tk):
         canvas_frame.bind("<Leave>", lambda e: canvas_frame.unbind_all("<MouseWheel>"))
 
     def show_quiz(self):
+        self._current_page = self.show_quiz
+        self._current_page_arg = ()
         self.clear_main_content()
         colors = self.colors[self.current_theme]
         self.clear_main_content()
@@ -447,6 +482,8 @@ class AstronomyApp(tk.Tk):
         canvas_frame.bind("<Leave>", lambda e: canvas_frame.unbind_all("<MouseWheel>"))
 
     def show_gallery(self):
+        self._current_page = self.show_gallery
+        self._current_page_arg = ()
         colors = self.colors[self.current_theme]
         self.clear_main_content()
         self.create_card(" Space Images", "", "🌌")
@@ -536,9 +573,13 @@ class AstronomyApp(tk.Tk):
         canvas_frame.bind("<Leave>", lambda e: canvas_frame.unbind_all("<MouseWheel>"))
 
     def show_tou(self):
+        self._current_page = self.show_tou
+        self._current_page_arg = ()
         self.clear_main_content()
 
     def show_contact(self):
+        self._current_page = self.show_contact
+        self._current_page_arg = ()
         self.clear_main_content()
 
 if __name__ == "__main__":
