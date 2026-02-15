@@ -10,11 +10,11 @@ from PIL import Image, ImageTk
 
 window = tk.Tk()
 window.title("Sign up")
-window.geometry("500x500")
+window.geometry("500x540")
 window.resizable(False, False)
 window.config(bg="white")
 
-logo = Image.open("img/Computer-logo.png")
+logo = Image.open("../img/Computer-logo.png")
 resized_logo = logo.resize((300, 110))
 photo = ImageTk.PhotoImage(resized_logo)
 y_step = 70
@@ -59,10 +59,13 @@ def handle_login():
         return
 
     if verify_login(email, password):
-        subprocess.Popen([sys.executable, "main.py", email])
+        subprocess.Popen([sys.executable, "../main.py", email])
         window.destroy()
     else:
         messagebox.showerror("Login failed", "Email or password was incorrect")
+def signup():
+    #window.destroy()
+    subprocess.Popen([sys.executable, "signup.py"])
 
 frame = tk.Frame(window, bg="white", padx=20, pady=10, width=600, height=900, relief="groove")
 frame.pack(pady=70)
@@ -82,11 +85,11 @@ password_entry.place(x=75, y=170 + y_step)
 signin_button = tk.Button(frame, text="Login", bg="#4CAF50", fg="white", command=handle_login, width="25", relief="flat", cursor="hand2")
 signin_button.place(y=250 + y_step, x=150)
 
-exists = tk.Label(frame, text="Don't have an account?", bg="white")
-exists.place(y=450 + y_step, x=190)
+exists = tk.Label(frame, text="Don't have an account?", fg="black", bg="white")
+exists.place(y=300 + y_step, x=150)
 
-login = tk.Button(frame, text="Signup", fg="#4CAF50", bg="white", relief="flat", cursor="hand2")
-login.place(y=448 + y_step, x=330)
+login = tk.Button(frame, text="Signup", fg="#4CAF50", bg="white", relief="flat", cursor="hand2", command=signup)
+login.place(y=298 + y_step, x=290)
 
 def on_enter(event):
     login.config(fg="red")

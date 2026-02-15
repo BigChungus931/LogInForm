@@ -3,16 +3,18 @@ from tkinter import messagebox, ttk
 import mysql.connector
 from mysql.connector import Error
 import bcrypt
+import sys
+import subprocess
 from PIL import Image, ImageTk
 
-window = tk.Tk()
-window.title("Sign up")
-window.geometry("700x700")
-window.resizable(False, False)
-window.config(bg="white")
+window_s = tk.Tk()
+window_s.title("Sign up")
+window_s.geometry("700x700")
+window_s.resizable(False, False)
+window_s.config(bg="white")
 
-logo = Image.open("img/Computer-logo.png")
-resized_logo = logo.resize((300, 90))
+logo = Image.open("../img/Computer-logo.png")
+resized_logo = logo.resize((300, 110))
 photo = ImageTk.PhotoImage(resized_logo)
 y_step = 70
 
@@ -137,13 +139,19 @@ try:
                 cursor.execute("INSERT INTO `users`( `Firstname`, `Lastname`, `Email`, `Password`, `Country`, `Age`, `Joined`) VALUES ( %s, %s, %s, %s, %s, %s, %s )", (fname, lname, email, hashed_pwd, country, age, joined))
                 connection.commit()
                 messagebox.showinfo("Success", "User registered successfully")
+                subprocess.Popen([sys.executable, "../main.py", email])
+                window_s.destroy()
+
+        def login():
+            # window.destroy()
+            subprocess.Popen([sys.executable, "signup.py"])
 
 
-        frame = tk.Frame(window, bg="white", padx=20, pady=10, width=600, height=900, relief="groove")
+        frame = tk.Frame(window_s, bg="white", padx=20, pady=10, width=600, height=900, relief="groove")
         frame.pack(pady=70)
         frame.pack_propagate(False)
 
-        logo_label = tk.Label(frame, image=photo, bd=0, highlightthickness=0)
+        logo_label = tk.Label(frame, image=photo, bd=0, bg="white", highlightthickness=0)
         logo_label.pack(pady=0)
 
         # title_Label = tk.Label(frame, text="Sign up", font=("Arial", 14, "bold"), bg="white")
@@ -186,7 +194,7 @@ try:
         exists = tk.Label(frame, text="Already have an account?", bg="white")
         exists.place(y=450 + y_step, x=190)
 
-        login = tk.Button(frame, text="Login", fg="#4CAF50", bg="white", relief="flat", cursor="hand2")
+        login = tk.Button(frame, text="Login", fg="#4CAF50", bg="white", relief="flat", cursor="hand2", command=login)
         login.place(y=448 + y_step, x=330)
 
         def on_enter(event):
@@ -201,4 +209,4 @@ try:
 except Error as e:
     print(f"Error connecting to database {e}")
 
-window.mainloop()
+window_s.mainloop()

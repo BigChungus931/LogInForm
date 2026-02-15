@@ -4,9 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="48eb6f23-c184-4a6f-8f0a-2e4a0ce32712" name="Changes" comment="made the questions stay on the same position when restarting the quiz">
+    <list default="true" id="48eb6f23-c184-4a6f-8f0a-2e4a0ce32712" name="Changes" comment="Worked on the light mode for the quiz">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eye.png" beforeDir="false" afterPath="$PROJECT_DIR$/Auth/form/eye.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fonts.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gallery.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pages/gallery.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hide.png" beforeDir="false" afterPath="$PROJECT_DIR$/Auth/form/hide.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/history.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pages/history.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.py" beforeDir="false" afterPath="$PROJECT_DIR$/Auth/form/login2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/login.py" beforeDir="false" afterPath="$PROJECT_DIR$/Auth/login.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/probes_quiz.py" beforeDir="false" afterPath="$PROJECT_DIR$/Quizzes/probes_quiz.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sign_in.py" beforeDir="false" afterPath="$PROJECT_DIR$/Auth/form/sign_in.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/signup.py" beforeDir="false" afterPath="$PROJECT_DIR$/Auth/signup.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/space_images_quiz.py" beforeDir="false" afterPath="$PROJECT_DIR$/Quizzes/space_images_quiz.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stars_quiz.py" beforeDir="false" afterPath="$PROJECT_DIR$/Quizzes/stars_quiz.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user.png" beforeDir="false" afterPath="$PROJECT_DIR$/Auth/form/user.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,24 +59,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python.index.executor&quot;: &quot;Run&quot;,
-    &quot;Python.login.executor&quot;: &quot;Run&quot;,
-    &quot;Python.main.executor&quot;: &quot;Run&quot;,
-    &quot;Python.signin.executor&quot;: &quot;Run&quot;,
-    &quot;Python.signup.executor&quot;: &quot;Run&quot;,
-    &quot;Python.space_images_quiz.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/My files/Coding/PycharmProjects/TelegramBot&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.fonts.executor": "Run",
+    "Python.index.executor": "Run",
+    "Python.login.executor": "Run",
+    "Python.main.executor": "Run",
+    "Python.sign_in.executor": "Run",
+    "Python.signin.executor": "Run",
+    "Python.signup.executor": "Run",
+    "Python.space_images_quiz.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "C:/My files/Coding/PycharmProjects/pythonTelegramBot"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\My files\Coding\PycharmProjects\LogInForm" />
       <recent name="C:\My files\Coding\PycharmProjects\LogInForm\img" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\My files\Coding\PycharmProjects\LogInForm\Pages" />
+      <recent name="C:\My files\Coding\PycharmProjects\LogInForm\Auth\form" />
+      <recent name="C:\My files\Coding\PycharmProjects\LogInForm\Auth" />
+      <recent name="C:\My files\Coding\PycharmProjects\LogInForm\Quizzes" />
+      <recent name="C:\My files\Coding\PycharmProjects\LogInForm\Space images" />
     </key>
   </component>
   <component name="RunManager">
@@ -81,7 +103,7 @@
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="SCRIPT_NAME" value="C:\My files\Coding\PycharmProjects\LogInForm\Pages\main.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -299,7 +321,15 @@
       <option name="project" value="LOCAL" />
       <updated>1768754975464</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Worked on the light mode for the quiz">
+      <option name="closed" value="true" />
+      <created>1769965658505</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1769965658505</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -323,6 +353,7 @@
     <MESSAGE value="Connected the database and added the questions from the stars quiz" />
     <MESSAGE value="Added all the questions from the space images quiz to the database" />
     <MESSAGE value="made the questions stay on the same position when restarting the quiz" />
-    <option name="LAST_COMMIT_MESSAGE" value="made the questions stay on the same position when restarting the quiz" />
+    <MESSAGE value="Worked on the light mode for the quiz" />
+    <option name="LAST_COMMIT_MESSAGE" value="Worked on the light mode for the quiz" />
   </component>
 </project>

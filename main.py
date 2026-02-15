@@ -1,17 +1,16 @@
 from tkinter import ttk
-from PIL import Image, ImageTk
-from gallery import *
-from history import *
-from probes_quiz import *
-from stars_quiz import *
-from space_images_quiz import *
+from Pages.gallery import *
+from Pages.history import *
+from Quizzes.probes_quiz import *
+from Quizzes.stars_quiz import *
+from Quizzes.space_images_quiz import *
 class AstronomyApp(tk.Tk):
     def __init__(self):
         super().__init__()
         self.title("Astronomy Hub")
         self.geometry("1400x800")
         self.configure(bg="white")
-        self.current_theme="light"
+        self.current_theme="dark"
         self.resizable(False, False)
         self.current_canvas_frame = None
         self._current_page = None
@@ -576,6 +575,7 @@ class AstronomyApp(tk.Tk):
         self._current_page = self.show_tou
         self._current_page_arg = ()
         self.clear_main_content()
+        self.create_card(" Terms Of Use","","")
 
     def show_contact(self):
         self._current_page = self.show_contact
