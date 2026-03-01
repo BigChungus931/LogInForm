@@ -1,6 +1,9 @@
 import tkinter as tk
 from tkinter import ttk
 from PIL import Image, ImageTk, ImageDraw
+from Quizzes.probes_quiz import *
+from Quizzes.stars_quiz import *
+from Quizzes.space_images_quiz import *
 
 def show_quiz(self):
     self._current_page = self.show_quiz
@@ -67,3 +70,16 @@ def show_quiz(self):
     self.current_canvas_frame = canvas_frame
     canvas_frame.bind("<Enter>", lambda e: canvas_frame.bind_all("<MouseWheel>", on_wheel3))
     canvas_frame.bind("<Leave>", lambda e: canvas_frame.unbind_all("<MouseWheel>"))
+
+def quiz(self, i):
+        self._current_page = self.quiz
+        self._current_page_arg = (i,)
+        colors = self.colors[self.current_theme]
+        if i == 0:
+            probes_quiz(self.clear_main_content, self.create_card2, self, colors)
+
+        elif i == 1:
+            stars_quiz(self.clear_main_content, self.create_card2, self, colors)
+
+        elif i == 2:
+            space_images_quiz(self.clear_main_content, self.create_card2, self, colors)

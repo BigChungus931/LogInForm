@@ -1,8 +1,4 @@
 from tkinter import ttk
-from Pages.gallery import *
-from Pages.history import *
-from Quizzes.probes_quiz import *
-from Quizzes.stars_quiz import *
 from Quizzes.space_images_quiz import *
 from includes.functions import *
 class AstronomyApp(tk.Tk):
@@ -13,6 +9,10 @@ class AstronomyApp(tk.Tk):
     show_history = show_history
     show_quiz = show_quiz
     show_contact = show_contact
+
+    gallery = gallery
+    history = history
+    quiz = quiz
     def __init__(self):
         super().__init__()
         self.title("Astronomy Hub")
@@ -70,12 +70,12 @@ class AstronomyApp(tk.Tk):
         #Color Schemes
         self.colors = {
             "light":{
-                "top_nav":"#BCCEDE",
-                "side_nav":"#BCCEDE",
+                "top_nav":"black",
+                "side_nav":"black",
                 "bg":"#EBEFFB",
                 "card":"#5855F5",
                 "text":"black",
-                "nav_text":"black",
+                "nav_text":"white",
                 "score":"#D7DC03"
             },
             "dark":{
@@ -205,116 +205,6 @@ class AstronomyApp(tk.Tk):
 
         ttk.Label(card, text=title_text, style="Subtitle.TLabel").pack(anchor="w", padx=20, pady=5)
         ttk.Label(card, text=content, style="Textx.TLabel", wraplength=1000).pack(anchor="w", padx=20, pady=5)
-
-#Gallery.py content
-    def gallery(self, i):
-        self._current_page = self.gallery
-        self._current_page_arg = (i, )
-        if i == 0:
-            Hoag(self.clear_main_content, self.create_card)
-
-        elif i == 1:
-            Ic1101(self.clear_main_content, self.create_card)
-
-        elif i == 2:
-            Vela(self.clear_main_content, self.create_card)
-
-        elif i == 3:
-            Needle(self.clear_main_content, self.create_card)
-
-        elif i == 4:
-            Ton618(self.clear_main_content, self.create_card)
-
-        elif i == 5:
-            Laniakea(self.clear_main_content, self.create_card)
-
-        elif i == 6:
-            Wasp7b(self.clear_main_content, self.create_card)
-
-        elif i == 7:
-            SolarSystem(self.clear_main_content, self.create_card)
-
-        elif i == 8:
-            SiriusAB(self.clear_main_content, self.create_card)
-
-        elif i == 9:
-            Alcyoneus(self.clear_main_content, self.create_card)
-
-        elif i == 10:
-            PhoenixCluster(self.clear_main_content, self.create_card)
-
-        elif i == 11:
-            Stephenson(self.clear_main_content, self.create_card)
-
-        elif i == 12:
-            Sombrero(self.clear_main_content, self.create_card)
-
-        elif i == 13:
-            Orion(self.clear_main_content, self.create_card)
-
-        elif i == 14:
-            Horsehead(self.clear_main_content, self.create_card)
-
-        elif i == 15:
-            Helix(self.clear_main_content, self.create_card)
-
-        elif i == 16:
-            AlphaCentauri(self.clear_main_content, self.create_card)
-
-        elif i == 17:
-            Kepler452b(self.clear_main_content, self.create_card)
-
-    def history(self, i):
-        self._current_page = self.history
-        self._current_page_arg = (i,)
-        if i == 0:
-            Venera16(self.clear_main_content, self.create_card)
-
-        elif i == 1:
-            Venera4(self.clear_main_content, self.create_card)
-
-        elif i == 2:
-            Voyager1(self.clear_main_content, self.create_card)
-
-        elif i == 3:
-            Viking1(self.clear_main_content, self.create_card)
-
-        elif i == 4:
-            Juno(self.clear_main_content, self.create_card)
-
-        elif i == 5:
-            Rosetta(self.clear_main_content, self.create_card)
-
-        elif i == 6:
-            Parker(self.clear_main_content, self.create_card)
-
-        elif i == 7:
-            Pioneer5(self.clear_main_content, self.create_card)
-
-        elif i == 8:
-            Hubble(self.clear_main_content, self.create_card)
-
-        elif i == 9:
-            jwst(self.clear_main_content, self.create_card)
-
-        elif i == 10:
-            Fermi(self.clear_main_content, self.create_card)
-
-        elif i == 11:
-            Chandra(self.clear_main_content, self.create_card)
-
-    def quiz(self, i):
-        self._current_page = self.quiz
-        self._current_page_arg = (i,)
-        colors = self.colors[self.current_theme]
-        if i == 0:
-            probes_quiz(self.clear_main_content, self.create_card2, self, colors)
-
-        elif i == 1:
-            stars_quiz(self.clear_main_content, self.create_card2, self, colors)
-
-        elif i == 2:
-            space_images_quiz(self.clear_main_content, self.create_card2, self, colors)
 
 if __name__ == "__main__":
     app = AstronomyApp()

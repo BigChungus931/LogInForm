@@ -1,6 +1,7 @@
 import tkinter as tk
 from tkinter import ttk
 from PIL import Image, ImageTk, ImageDraw
+from Pages.gallery import *
 
 def show_gallery(self):
     self._current_page = self.show_gallery
@@ -97,3 +98,60 @@ def show_gallery(self):
     self.current_canvas_frame = canvas_frame
     canvas_frame.bind("<Enter>", lambda e: canvas_frame.bind_all("<MouseWheel>", on_wheel2))
     canvas_frame.bind("<Leave>", lambda e: canvas_frame.unbind_all("<MouseWheel>"))
+
+def gallery(self, i):
+        self._current_page = self.gallery
+        self._current_page_arg = (i, )
+        if i == 0:
+            Hoag(self.clear_main_content, self.create_card)
+
+        elif i == 1:
+            Ic1101(self.clear_main_content, self.create_card)
+
+        elif i == 2:
+            Vela(self.clear_main_content, self.create_card)
+
+        elif i == 3:
+            Needle(self.clear_main_content, self.create_card)
+
+        elif i == 4:
+            Ton618(self.clear_main_content, self.create_card)
+
+        elif i == 5:
+            Laniakea(self.clear_main_content, self.create_card)
+
+        elif i == 6:
+            Wasp7b(self.clear_main_content, self.create_card)
+
+        elif i == 7:
+            SolarSystem(self.clear_main_content, self.create_card)
+
+        elif i == 8:
+            SiriusAB(self.clear_main_content, self.create_card)
+
+        elif i == 9:
+            Alcyoneus(self.clear_main_content, self.create_card)
+
+        elif i == 10:
+            PhoenixCluster(self.clear_main_content, self.create_card)
+
+        elif i == 11:
+            Stephenson(self.clear_main_content, self.create_card)
+
+        elif i == 12:
+            Sombrero(self.clear_main_content, self.create_card)
+
+        elif i == 13:
+            Orion(self.clear_main_content, self.create_card)
+
+        elif i == 14:
+            Horsehead(self.clear_main_content, self.create_card)
+
+        elif i == 15:
+            Helix(self.clear_main_content, self.create_card)
+
+        elif i == 16:
+            AlphaCentauri(self.clear_main_content, self.create_card)
+
+        elif i == 17:
+            Kepler452b(self.clear_main_content, self.create_card)

@@ -1,6 +1,7 @@
 import tkinter as tk
 from tkinter import ttk
 from PIL import Image, ImageTk, ImageDraw
+from Pages.history import *
 
 def show_history(self):
     self._current_page = self.show_history
@@ -85,3 +86,42 @@ def show_history(self):
     self.current_canvas_frame = canvas_frame
     canvas_frame.bind("<Enter>", lambda e: canvas_frame.bind_all("<MouseWheel>", on_wheel))
     canvas_frame.bind("<Leave>", lambda e: canvas_frame.unbind_all("<MouseWheel>"))
+
+def history(self, i):
+        self._current_page = self.history
+        self._current_page_arg = (i,)
+        if i == 0:
+            Venera16(self.clear_main_content, self.create_card)
+
+        elif i == 1:
+            Venera4(self.clear_main_content, self.create_card)
+
+        elif i == 2:
+            Voyager1(self.clear_main_content, self.create_card)
+
+        elif i == 3:
+            Viking1(self.clear_main_content, self.create_card)
+
+        elif i == 4:
+            Juno(self.clear_main_content, self.create_card)
+
+        elif i == 5:
+            Rosetta(self.clear_main_content, self.create_card)
+
+        elif i == 6:
+            Parker(self.clear_main_content, self.create_card)
+
+        elif i == 7:
+            Pioneer5(self.clear_main_content, self.create_card)
+
+        elif i == 8:
+            Hubble(self.clear_main_content, self.create_card)
+
+        elif i == 9:
+            jwst(self.clear_main_content, self.create_card)
+
+        elif i == 10:
+            Fermi(self.clear_main_content, self.create_card)
+
+        elif i == 11:
+            Chandra(self.clear_main_content, self.create_card)
